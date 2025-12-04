@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de menú de navegación responsive con efectos modernos">
+    <title>Navegación Moderna | Ejercicio 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">YORDY.BIKER97</span>
+            </a>
+
+            <!-- Toggle para móvil (hamburguesa) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portafolio" class="nav-link">Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#equipo" class="nav-link">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link btn-cta">Contactar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de ejemplo para demostrar scroll -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Navegación Moderna y Responsive</h1>
+            <p>Este menú demuestra el uso de pseudo-clases CSS y diseño responsive.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <img src="imagen/yordy.png" alt="Logo Yordy" class="logo">
+                    <h3>Efectos Hover</h3>
+                    <p>Los enlaces cambian de color al pasar el mouse con transiciones suaves.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="imagen/yordy.png" alt="Logo Yordy" class="logo">
+                    <h3>Estado Activo</h3>
+                    <p>El enlace actual tiene un estilo diferente para indicar la página actual.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="imagen/yordy.png" alt="Logo Yordy" class="logo">
+                    <h3>Responsive</h3>
+                    <p>El menú se adapta a dispositivos móviles con un botón hamburguesa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section" id="servicios">
+        <div class="container">
+           <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos soluciones digitales integrales para potenciar tu presencia online</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web responsivos, optimizados para SEO y con las últimas tecnologías web (HTML5, CSS3, JavaScript).</p>
+                    <ul class="service-features">
+                        <li>Diseño responsive</li>
+                        <li>Optimización SEO</li>
+                        <li>Integración de APIs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseño de interfaces intuitivas y experiencias de usuario centradas en las necesidades de tus clientes.</p>
+                    <ul class="service-features">
+                        <li>Prototipado interactivo</li>
+                        <li>Investigación de usuarios</li>
+                        <li>Pruebas de usabilidad</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce</h3>
+                    <p>Desarrollo de tiendas online completas con sistemas de pago, gestión de inventario y panel administrativo.</p>
+                    <ul class="service-features">
+                        <li>Pasarelas de pago</li>
+                        <li>Sistema de inventario</li>
+                        <li>Análisis de ventas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias de marketing online para aumentar tu visibilidad, generar leads y convertir visitantes en clientes.</p>
+                    <ul class="service-features">
+                        <li>SEO y SEM</li>
+                        <li>Email marketing</li>
+                        <li>Analítica web</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="portafolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Portafolio de Proyectos</h2>
+                <p>Algunos de nuestros trabajos más recientes y destacados</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder proyecto1"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Tienda Online de Bicicletas</h3>
+                        <p>E-commerce completo para una tienda especializada en bicicletas de montaña y accesorios.</p>
+                        <div class="portfolio-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder proyecto2"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Plataforma Educativa</h3>
+                        <p>Sistema de aprendizaje online con cursos interactivos, evaluaciones y seguimiento de progreso.</p>
+                        <div class="portfolio-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>API REST</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder proyecto3"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Aplicación de Fitness</h3>
+                        <p>App móvil para seguimiento de entrenamientos, nutrición y metas personales de salud.</p>
+                        <div class="portfolio-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="equipo">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nuestro Equipo</h2>
+            <p>Profesionales apasionados por la tecnología y la innovación</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="imagen/Photocon.png" alt="Logo Yordy" class="logo">
+                </div>
+                <h3>Yordy Tolavi</h3>
+                <p class="member-role">Desarrollador Frontend</p>
+                <p>Especialista en JavaScript y frameworks modernos. Amante del ciclismo y la tecnología.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="imagen/mujer.png" alt="Logo Ana Martínez" class="logo">
+                </div>
+                <h3>Ana Martínez</h3>
+                <p class="member-role">Diseñadora UI/UX</p>
+                <p>Creativa especializada en diseño de interfaces y experiencia de usuario. Apasionada por el arte digital.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Carlos Fernández">
+                </div>
+                <h3>Carlos Fernández</h3>
+                <p class="member-role">Desarrollador Backend</p>
+                <p>Experto en arquitectura de servidores, bases de datos y APIs. Entusiasta de la seguridad informática.</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                    <a href="#"><i class="fab fa-dev"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="content-section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog y Noticias</h2>
+                <p>Artículos sobre tecnología, desarrollo web y tendencias digitales</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-date">
+                        <span class="day">15</span>
+                        <span class="month">Jun</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Tendencias en Desarrollo Web 2025</h3>
+                        <p>Exploramos las tecnologías y metodologías que dominarán el desarrollo web en los próximos años.</p>
+                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-date">
+                        <span class="day">28</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Optimización de Performance Web</h3>
+                        <p>Consejos prácticos para mejorar la velocidad de carga y rendimiento de tus aplicaciones web.</p>
+                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-date">
+                        <span class="day">10</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Diseño Accesible para Todos</h3>
+                        <p>Guía para crear interfaces web inclusivas que sean utilizables por personas con discapacidades.</p>
+                        <a href="#" class="blog-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="contacto">
+        <div class="container">
+            <div class="section-header">
+            <h2>Sección de Contacto</h2>
+            <p>Formulario de contacto y datos.</p>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos sobre cómo podemos hacerlo realidad!</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Santa Cruz, Bolivia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+591 74518786</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hola@yordybiker97.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Síguenos</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" placeholder="Asunto">
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TechCorp. Ejercicio de navegación responsive.</p>
+            <p>&copy; 2025 YORDY.BIKER97. Todos los derechos reservados.</p>
+            <p>Desarrollado con <i class="fas fa-heart"></i> y mucho código.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script src="script.js"></script>
+</body>
+</html>

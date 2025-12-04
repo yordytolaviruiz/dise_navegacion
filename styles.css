@@ -1,0 +1,1326 @@
+/* =====================================
+   RESET Y VARIABLES FUTURISTAS
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores futurista - Tema cibernético */
+    --color-primary: #00d9ff;
+    --color-primary-dark: #0099cc;
+    --color-secondary: #ff00ff;
+    --color-accent: #00ff88;
+    --color-text: #e0e0ff;
+    --color-text-light: #a0a0c0;
+    --color-bg: #0a0a1a;
+    --color-bg-dark: #050510;
+    --color-bg-card: rgba(16, 16, 32, 0.8);
+    --color-border: rgba(0, 217, 255, 0.3);
+    
+    /* Navegación */
+    --nav-height: 80px;
+    --nav-bg: rgba(5, 5, 16, 0.95);
+    --nav-text: #ffffff;
+    
+    /* Efectos de neón */
+    --neon-glow: 0 0 10px var(--color-primary),
+                 0 0 20px var(--color-primary),
+                 0 0 30px var(--color-primary);
+    
+    --neon-pink: 0 0 10px var(--color-secondary),
+                 0 0 20px var(--color-secondary);
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Transiciones */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Efecto de líneas de grid futurista */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* =====================================
+   NAVEGACIÓN FUTURISTA
+   ===================================== */
+
+.navbar {
+    background-color: var(--nav-bg);
+    height: var(--nav-height);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 30px rgba(0, 217, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo futurista */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.logo:hover {
+    color: var(--color-primary);
+    text-shadow: var(--neon-glow);
+    transform: scale(1.05);
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transition: width 0.3s ease;
+}
+
+.logo:hover::before {
+    width: 100%;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Botón hamburguesa futurista */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-toggle:hover::before {
+    left: 100%;
+}
+
+.hamburger {
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    transition: var(--transition);
+    position: relative;
+    margin: 0 auto;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    transition: var(--transition);
+    left: 0;
+}
+
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    top: 6px;
+}
+
+/* Animación del hamburguesa cuando está abierto */
+.nav-toggle.active {
+    border-color: var(--color-secondary);
+    box-shadow: var(--neon-pink);
+}
+
+.nav-toggle.active .hamburger {
+    background-color: var(--color-secondary);
+}
+
+.nav-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+    background-color: var(--color-secondary);
+}
+
+.nav-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: var(--color-secondary);
+}
+
+/* Menú de navegación futurista */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+/* Efecto hover futurista */
+.nav-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Efecto de línea animada */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+/* Estado activo futurista */
+.nav-link.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-bg-dark);
+    border: none;
+    box-shadow: var(--neon-glow);
+    animation: glow 2s infinite alternate;
+}
+
+.nav-link.active::before {
+    display: none;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--color-primary); }
+    to { box-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-secondary); }
+}
+
+/* Botón CTA futurista */
+.btn-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-bg-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 217, 255, 0.6),
+                0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+.btn-cta:hover::before {
+    left: 100%;
+}
+
+/* =====================================
+   CONTENIDO FUTURISTA
+   ===================================== */
+
+.hero {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+    color: white;
+    padding: var(--spacing-xl) 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(50px, 50px) rotate(360deg); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    /*-webkit-background-clip: text;*/
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+    position: relative;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+/* Tarjetas de características futuristas */
+.feature-card {
+    background: var(--color-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-md);
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    padding: 10px;
+    filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.feature-card h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    position: relative;
+}
+
+.feature-card p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* =====================================
+   SECCIONES FUTURISTAS
+   ===================================== */
+
+.content-section {
+    padding: var(--spacing-xl) 0;
+    min-height: 400px;
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.content-section:nth-child(even) {
+    background: linear-gradient(135deg, rgba(5, 5, 16, 0.8) 0%, rgba(10, 10, 26, 0.9) 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    /*-webkit-background-clip: text;*/
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-header p {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de servicios futuristas */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.service-card {
+    background: var(--color-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    color: var(--color-bg-dark);
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    color: var(--color-text);
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px dashed var(--color-border);
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-features li::before {
+    content: '▸';
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+}
+
+/* Portafolio futurista */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.portfolio-item {
+    background: var(--color-bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 217, 255, 0.3);
+}
+
+.image-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.proyecto1 { background: linear-gradient(135deg, #00d9ff, #0099cc); }
+.proyecto2 { background: linear-gradient(135deg, #ff00ff, #cc00cc); }
+.proyecto3 { background: linear-gradient(135deg, #00ff88, #00cc66); }
+
+.portfolio-content {
+    padding: var(--spacing-lg);
+}
+
+.portfolio-content h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.portfolio-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.portfolio-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.portfolio-tech span {
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-border);
+}
+
+/* Equipo futurista */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.team-member {
+    background: var(--color-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.team-member:hover::before {
+    left: 100%;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto var(--spacing-md);
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-primary);
+    box-shadow: 
+        0 0 20px rgba(0, 217, 255, 0.5),
+        inset 0 0 20px rgba(0, 217, 255, 0.2);
+    transition: var(--transition);
+}
+
+.team-member:hover .member-photo {
+    transform: scale(1.05);
+    border-color: var(--color-secondary);
+    box-shadow: 
+        0 0 30px rgba(255, 0, 255, 0.5),
+        0 0 40px rgba(0, 217, 255, 0.3);
+}
+
+.member-photo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg, 
+        transparent, 
+        rgba(0, 217, 255, 0.4), 
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: photo-glow 3s linear infinite;
+    z-index: 2;
+}
+
+@keyframes photo-glow {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.team-member h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.team-member h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transition: width 0.3s ease;
+}
+
+.team-member:hover h3::after {
+    width: 60px;
+}
+
+.member-role {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.member-role::before,
+.member-role::after {
+    content: '▸';
+    color: var(--color-secondary);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.member-role::before {
+    left: -5px;
+}
+
+.member-role::after {
+    right: -5px;
+}
+
+.team-member:hover .member-role::before,
+.team-member:hover .member-role::after {
+    opacity: 1;
+}
+
+.team-member p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.member-social a {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.member-social a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.member-social a:hover {
+    background: var(--color-primary);
+    color: var(--color-bg-dark);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+}
+
+.member-social a:hover::before {
+    left: 100%;
+}
+
+/* Efecto para iconos específicos */
+.member-social a:nth-child(1):hover {
+    background: #333; /* GitHub */
+    color: white;
+}
+
+.member-social a:nth-child(2):hover {
+    background: #0077b5; /* LinkedIn */
+    color: white;
+}
+
+.member-social a:nth-child(3):hover {
+    background: #1da1f2; /* Twitter */
+    color: white;
+}
+
+/* Blog futurista */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.blog-card {
+    background: var(--color-bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primary);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 217, 255, 0.3);
+}
+
+.blog-date {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-bg-dark);
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    min-width: 60px;
+}
+
+.blog-date .day {
+    font-size: 1.5rem;
+    display: block;
+}
+
+.blog-date .month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.blog-content {
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
+}
+
+.blog-content h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-content p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.blog-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: var(--transition);
+}
+
+.blog-link:hover {
+    color: var(--color-primary);
+    gap: var(--spacing-sm);
+}
+
+/* Contacto futurista */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--color-bg-card);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 5px 20px rgba(0, 217, 255, 0.2);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg-dark);
+    font-size: 1.2rem;
+}
+
+.info-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.social-links {
+    background: var(--color-bg-card);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--color-primary);
+    color: var(--color-bg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.4);
+}
+
+.contact-form {
+    background: var(--color-bg-card);
+    padding: var(--spacing-xl);
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.form-btn {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-bg-dark);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 25px rgba(0, 217, 255, 0.4),
+        0 0 30px rgba(255, 0, 255, 0.3);
+}
+
+.form-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.form-btn:hover::before {
+    left: 100%;
+}
+
+/* Footer futurista */
+.footer {
+    background: var(--color-bg-dark);
+    color: var(--color-text);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-secondary), transparent);
+}
+
+.footer p {
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+.footer .fa-heart {
+    color: var(--color-secondary);
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* =====================================
+   RESPONSIVE FUTURISTA
+   ===================================== */
+
+@media (max-width: 768px) {
+    /* Mostrar botón hamburguesa */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Menú móvil futurista */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: var(--nav-height);
+        flex-direction: column;
+        background: var(--nav-bg);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        text-align: center;
+        transition: var(--transition-slow);
+        padding: var(--spacing-xl) 0;
+        gap: 0;
+        z-index: 999;
+        border-top: 1px solid var(--color-border);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Menú abierto con efecto futurista */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(255, 0, 255, 0.05));
+        z-index: -1;
+    }
+
+    .nav-item {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-xs) 0;
+        border: 1px solid var(--color-border);
+        background: rgba(0, 217, 255, 0.05);
+        font-size: 1.1rem;
+    }
+
+    .nav-link:hover {
+        background: rgba(0, 217, 255, 0.1);
+        transform: translateX(10px);
+    }
+
+    /* Botón CTA en móvil */
+    .btn-cta {
+        margin: var(--spacing-md) auto;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* Hero responsive */
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Ajustes generales para móvil */
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .content-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .services-grid,
+    .portfolio-grid,
+    .team-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 450px;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .feature-card,
+    .service-card,
+    .portfolio-item,
+    .team-member,
+    .blog-card {
+        padding: var(--spacing-md);
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .footer {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+}
+
+/* Efectos especiales para scroll */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Asegurar contraste para accesibilidad */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #00bfff;
+        --color-secondary: #ff0080;
+        --color-text: #ffffff;
+        --color-bg: #000000;
+    }
+}

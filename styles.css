@@ -380,7 +380,7 @@ body::before {
     font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    /*-webkit-background-clip: text;*/
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
     position: relative;
@@ -501,7 +501,7 @@ body::before {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    /*-webkit-background-clip: text;*/
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1323,4 +1323,5 @@ body::before {
         --color-text: #ffffff;
         --color-bg: #000000;
     }
+
 }
